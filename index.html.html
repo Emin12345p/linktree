@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alp Çodur | Profil</title>
+    <!-- Modern Fontlar -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- İkonlar için FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Genel Değişkenler ve Sıfırlamalar */
+        :root {
+            --bg-color: #0f172a;      /* Gece mavisi / Koyu gri */
+            --text-main: #f8fafc;     /* Beyaz tonu */
+            --text-muted: #94a3b8;    /* Gri tonu */
+            --card-bg: rgba(30, 41, 59, 0.5); /* Yarı saydam kart rengi */
+        }
+        
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            /* Arka plana çok hafif, şık bir degrade ışıltı eklendi */
+            background-image: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 400px);
+        }
+
+        /* Ana Taşıyıcı Konteyner */
+        .container {
+            width: 100%;
+            max-width: 520px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Profil Fotoğrafı (Harflerden oluşan şık bir logo stili) */
+        .profile-pic {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            margin: 0 auto 1.25rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Başlıklar ve Metinler */
+        .name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.5px;
+        }
+
+        .role {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Linkler Konteyneri */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        /* Genel Buton Stili */
+        .link-btn {
+            display: flex;
+            align-items: center;
+            padding: 1.15rem 1.5rem;
+            border-radius: 16px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .link-btn i {
+            font-size: 1.5rem;
+            position: absolute;
+            left: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .link-btn span {
+            width: 100%;
+            text-align: center;
+            /* İkon ile çakışmaması için metni biraz sağa itiyoruz */
+            padding-left: 1rem; 
+        }
+
+        /* Özel Buton Stilleri ve Hover Animasyonları */
+        
+        /* 1. YouTube Butonu */
+        .btn-youtube {
+            background: linear-gradient(135deg, #ef4444, #b91c1c);
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .btn-youtube:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.5);
+        }
+        .btn-youtube:hover i {
+            transform: scale(1.2) rotate(-10deg);
+        }
+
+        /* 2. GitHub Butonu */
+        .btn-github {
+            background: #1e293b;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-github:hover {
+            background: #27354f;
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            border-color: #475569;
+        }
+        .btn-github:hover i {
+            transform: scale(1.2) translateY(-2px);
+        }
+
+        /* 3. X (Twitter) Butonu */
+        .btn-twitter {
+            background: #000000;
+            border: 1px solid #1e293b;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-twitter:hover {
+            background: #111111;
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+            border-color: #334155;
+        }
+        .btn-twitter:hover i {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        /* 4. TikTok Butonu (Özel Parlayan Efekt) */
+        .btn-tiktok {
+            background: #000000;
+            border: 1px solid #333;
+            /* TikTok'un efsanevi Cyan ve Magenta renkleriyle hafif başlangıç gölgesi */
+            box-shadow: -2px 2px 8px rgba(37, 244, 238, 0.2), 2px -2px 8px rgba(254, 44, 85, 0.2);
+        }
+        .btn-tiktok:hover {
+            transform: translateY(-5px) scale(1.02);
+            /* Hover durumunda dışa doğru parlayan neon efekti */
+            box-shadow: -4px 4px 15px rgba(37, 244, 238, 0.6), 4px -4px 15px rgba(254, 44, 85, 0.6);
+            border-color: transparent;
+        }
+        .btn-tiktok:hover i {
+            transform: scale(1.2);
+            /* İkona da hafif renk efekti */
+            text-shadow: -1px 1px 0px #25F4EE, 1px -1px 0px #FE2C55;
+        }
+
+        /* Mobil Uyumluluk (Responsive) */
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem;
+            }
+            .name {
+                font-size: 1.5rem;
+            }
+            .role {
+                font-size: 0.9rem;
+            }
+            .bio {
+                padding: 1.25rem;
+                font-size: 0.9rem;
+            }
+            .link-btn {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+            .link-btn i {
+                font-size: 1.3rem;
+                left: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Profil Logosu (İsim Baş Harfleri) -->
+        <div class="profile-pic">AÇ</div>
+        
+        <!-- Kimlik Bilgileri -->
+        <h1 class="name">Alp Çodur (Emin)</h1>
+        <h2 class="role">12 Yaşında YouTube İçerik Üreticisi & GitHub Geliştiricisi</h2>
+        
+        <!-- Hakkımda Kısmı -->
+        <p class="bio">
+            "YouTube'da @TRmemes kanalımda eğlenceli ve komik montaj videoları, memeler üretiyorum. Yazılıma ve teknolojiye ilgi duyuyorum, boş zamanlarımda GitHub'da projeler geliştiriyorum."
+        </p>
+        
+        <!-- Sosyal Medya Linkleri / Butonlar -->
+        <div class="links">
+            
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/@TRmemes" target="_blank" rel="noopener noreferrer" class="link-btn btn-youtube">
+                <i class="fa-brands fa-youtube"></i>
+                <span>YouTube Kanalım</span>
+            </a>
+            
+            <!-- GitHub -->
+            <a href="https://github.com/Emin12345p" target="_blank" rel="noopener noreferrer" class="link-btn btn-github">
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub Profilim</span>
+            </a>
+            
+            <!-- X (Twitter) -->
+            <a href="https://x.com/AlpCodur8544" target="_blank" rel="noopener noreferrer" class="link-btn btn-twitter">
+                <i class="fa-brands fa-x-twitter"></i>
+                <span>X (Twitter) Hesabım</span>
+            </a>
+            
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@turkosfm" target="_blank" rel="noopener noreferrer" class="link-btn btn-tiktok">
+                <i class="fa-brands fa-tiktok"></i>
+                <span>TikTok Hesabım</span>
+            </a>
+            
+        </div>
+    </div>
+
+</body>
+</html>
